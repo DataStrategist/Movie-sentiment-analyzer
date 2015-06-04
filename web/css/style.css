@@ -17,3 +17,8 @@
       display: table-cell; 
   }
 }
+
+.movie-poster{
+    height: 150px !important;
+    width: 250px !important;
+}
