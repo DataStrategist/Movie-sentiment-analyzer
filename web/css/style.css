@@ -8,17 +8,35 @@
 .img_container{
     max-width: 300px;
 }
+.img_container1{
+    max-width: 250px;
+}
+.img_container2{
+    max-width: 250px;
+}
 @-moz-document url-prefix() {
-  .img_container { 
-      display: table-cell; 
-      max-width: 87px !important;
-  }
-  .img-responsive{
-      display: table-cell; 
-  }
+    .img-responsive{
+        display: table-cell; 
+    }    
+
+    .img_container { 
+        display: table-cell; 
+        max-width: 87px !important;
+    }
+    .chart-img{
+        display: table-cell; 
+        max-width: 87px !important;      
+    }
 }
 
 .movie-poster{
-    height: 150px !important;
-    width: 250px !important;
+    height: 180px !important;
+    width: 260px !important;
+}
+.heading-panel{
+    border-radius: 3px;
+    padding: 3px;
+}
+.border-no{
+    border: none !important;
 }
