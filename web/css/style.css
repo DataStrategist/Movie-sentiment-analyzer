@@ -30,8 +30,9 @@
 }
 
 .movie-poster{
-    height: 180px !important;
-    width: 260px !important;
+    height: 165px !important;
+    /*min-width: 200px !important;*/
+    width:195px !important;
 }
 .heading-panel{
     border-radius: 3px;
