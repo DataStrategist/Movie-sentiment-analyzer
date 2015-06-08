@@ -554,8 +554,9 @@
             <p>  I saw this 'squiggle' on <a href="http://vallandingham.me/sentence_drawings/#farewell">Jan Vallandingham's blog</a>, who in turn took it from <a href="http://www.stefanieposavec.co.uk/">Stefanie Posavec</a>... and as soon as I saw it, I thought it would be a great tool for this analysis, if I can add sentiment analysis to it. Or at least hella fun. I got so excited that I didn't even see that code to accomplish this in R had already been developed by <a href="https://trinkerrstuff.wordpress.com/2013/12/08/sentence-drawing-function-vs-art/">TRinker</a>. Oh well, it was fun to construct another algorithm to accomplish the same task (turn right at the end of every sentence). for what it's worth, its in my github repo.</p>
             <p> Analysis: At a glance, it appears that there's more density in chick flicks and more sparsity in guy movies. More importantly however, it seems like the chick flicks have clusters of green. Which means there are a lot of positive short sentences that cluster together. If there is any clustering evident in man movies, it would be red, so negative valence. For man movies there's more grey overall, suggesting there might be more neutral sentences whereas it appears that most sentences in chick flicks are charged one way or the other. the big exception is "The Last Dragon" which we are treating as a chick flick.
             </p>
-            <div>
-                <h3 class="bg-danger heading-panel">Chick flicks</h3>
+
+            <div class="flick-panel">
+                <div class="flick-panel-heading"><h3 style="margin:  0px !important;">Chick flicks</h3></div>
                 <table class="table table-responsive table-condensed border-no">
                     <tr>
                         <td class="img_container1 border-no">
@@ -574,11 +575,11 @@
                             <a data-lightbox="When Harry met sally-sDrawing.png" href="./Output/When Harry met sally-sDrawing.png" data-title="When Harry met sally-sDrawing.png"/><img src="./Output/When Harry met sally-sDrawing.png" class="img-responsive"/>
                         </td>
                     </tr>
-                </table>            
+                </table>        
             </div>
-
-            <div >
-                <h3 class="bg-info heading-panel">Man movies</h3>
+            <br>
+            <div class="man-panel">
+                <div class="man-panel-heading"><h3 style="margin:  0px !important;">Man movies</h3></div>
                 <table class="table table-responsive table-condensed border-no">
                     <tr>
                         <td class="img_container1 border-no">
@@ -598,7 +599,9 @@
                         </td>
                     </tr>
                 </table>            
-            </div>
+
+            </div>            
+
         </aside>
 
 
@@ -613,145 +616,145 @@
             <p> The other dominant word in all films is "you". Of course, in any film, the point is usually some kind of interaction between characters. </p>
             <p> A little note on "will", in Machete at the expense of get/got. This is because Machete WILL skin you alive, he doesn't GOT to do it. Machete don't got to do anything. </p> 
             <p> Coming back to chick flicks, there's a lot of "just", a word used to either clarify or say what happened a minute ago (for example,"I just mean that..." or " I just saw him"). The former could be seen as a way of saying things more gently and/or apologetically, perhaps trying to bridge a gap between the two people who are supposed to be together by the end of the movie. Notice that this word is not prevalent in guy flicks. </p>
-        <table class="table table-responsive table-condensed border-no">
+            <table class="table table-responsive table-condensed border-no">
+                <tr>
+                    <td class="img_container1 border-no">
+                        <a data-lightbox="Breakfast at Tiffanys-wordcloud.png" href="./Output/Breakfast at Tiffanys-wordcloud.png" data-title="Breakfast at Tiffanys-wordcloud.png"/><img src="./Output/Breakfast at Tiffanys-wordcloud.png" class="img-responsive"/></a>
+                    </td>
+                    <td class="img_container1 border-no">
+                        <a data-lightbox="Bridget Jones-wordcloud.png" href="./Output/Bridget Jones-wordcloud.png" data-title="Bridget Jones-wordcloud.png"/><img src="./Output/Bridget Jones-wordcloud.png" class="img-responsive"/></a>
+                    </td>
+                    <td class="img_container1 border-no">
+                        <a data-lightbox="casablanca-wordcloud.png" href="./Output/casablanca-wordcloud.png" data-title="casablanca-wordcloud.png"/><img src="./Output/casablanca-wordcloud.png" class="img-responsive"/></a>
+                    </td>
+                    <td class="img_container1 border-no">
+                        <a data-lightbox="Notting Hill-wordcloud.png" href="./Output/Notting Hill-wordcloud.png" data-title="Notting Hill-wordcloud.png"/><img src="./Output/Notting Hill-wordcloud.png" class="img-responsive"/></a>
+                    </td>
+                    <td class="img_container1 border-no">
+                        <a data-lightbox="When Harry met sally-wordcloud.png" href="./Output/When Harry met sally-wordcloud.png" data-title="When Harry met sally-wordcloud.png"/><img src="./Output/When Harry met sally-wordcloud.png" class="img-responsive"/></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="img_container1 border-no">
+                        <a data-lightbox="Die Hard-wordcloud.png" href="./Output/Die Hard-wordcloud.png" data-title="Die Hard-wordcloud.png"/><img src="./Output/Die Hard-wordcloud.png" class="img-responsive"/></a>
+                    </td>
+                    <td class="img_container1 border-no">
+                        <a data-lightbox="Machete-wordcloud.png" href="./Output/Machete-wordcloud.png" data-title="Machete-wordcloud.png"/><img src="./Output/Machete-wordcloud.png" class="img-responsive"/></a>
+                    </td>
+                    <td class="img_container1 border-no">
+                        <a data-lightbox="Predator-wordcloud.png" href="./Output/Predator-wordcloud.png" data-title="Predator-wordcloud.png"/><img src="./Output/Predator-wordcloud.png" class="img-responsive"/></a>
+                    </td>
+                    <td class="img_container1 border-no">
+                        <a data-lightbox="Rambo-wordcloud.png" href="./Output/Rambo-wordcloud.png" data-title="Rambo-wordcloud.png"/><img src="./Output/Rambo-wordcloud.png" class="img-responsive"/></a>
+                    </td>
+                    <td class="img_container1 border-no">
+                        <a data-lightbox="The last dragon-wordcloud.png" href="./Output/The last dragon-wordcloud.png" data-title="The last dragon-wordcloud.png"/><img src="./Output/The last dragon-wordcloud.png" class="img-responsive"/></a>
+                    </td>
+                </tr>
+            </table>
+        </aside>
+
+
+
+
+
+        <aside class="bg-dark">
+            <div id="Movies" class="container text-center">
+                <div class="call-to-action">
+                    <h2>Movies begin here:</h2>
+                </div>
+            </div>
+        </aside>
+
+        <aside>
+            <h2><a id="f1">Breakfast at Tiffany's</a></h2>
+            <p class="bg-light">
+            <p><b>Background/Methods:</b></p>
+            <p><b>Analysis:</b></p>
+            <p><b>Discussion:</b></p>
+            <p> This chick flick's positive emotions go up throughout the movie, while still being quite erratic as well. There are some big highs and big lows, probably explained by the discovery by Fred of an ex-husband who wishes he wasn't (very negative) and the great day out with Fred (very positive) to name but a few. The sentences are a little more positive than negative but not by much. When they are negative, some of them go on for a while...Perhaps to do with that whole speech at the train station... The feelings that dominate are of course trust, joy and anticipation, while some of the most frequently used words are "you" "get/got" but also "darling", which Holly Golightly says a lot.</p>
+        </p>
+        <table class="table table-responsive">
             <tr>
-                <td class="img_container1 border-no">
-                    <a data-lightbox="Breakfast at Tiffanys-wordcloud.png" href="./Output/Breakfast at Tiffanys-wordcloud.png" data-title="Breakfast at Tiffanys-wordcloud.png"/><img src="./Output/Breakfast at Tiffanys-wordcloud.png" class="img-responsive"/></a>
+                <td class="img_container">
+                    <a href="./Output/Breakfast at Tiffanys-emoMo.png" data-lightbox="image-f11" data-title="./Output/Breakfast at Tiffanys-emoMo.png">
+                        <img src="./Output/Breakfast at Tiffanys-emoMo.png" class="img-responsive"/>
+                    </a>
                 </td>
-                <td class="img_container1 border-no">
-                    <a data-lightbox="Bridget Jones-wordcloud.png" href="./Output/Bridget Jones-wordcloud.png" data-title="Bridget Jones-wordcloud.png"/><img src="./Output/Bridget Jones-wordcloud.png" class="img-responsive"/></a>
+                <td class="img_container">
+                    <a href="./Output/Breakfast at Tiffanys-feelings.png" data-lightbox="image-f12" data-title="./Output/Breakfast at Tiffanys-feelings.png">
+                        <img src="./Output/Breakfast at Tiffanys-feelings.png" class="img-responsive"/>
+                    </a>
                 </td>
-                <td class="img_container1 border-no">
-                    <a data-lightbox="casablanca-wordcloud.png" href="./Output/casablanca-wordcloud.png" data-title="casablanca-wordcloud.png"/><img src="./Output/casablanca-wordcloud.png" class="img-responsive"/></a>
-                </td>
-                <td class="img_container1 border-no">
-                    <a data-lightbox="Notting Hill-wordcloud.png" href="./Output/Notting Hill-wordcloud.png" data-title="Notting Hill-wordcloud.png"/><img src="./Output/Notting Hill-wordcloud.png" class="img-responsive"/></a>
-                </td>
-                <td class="img_container1 border-no">
-                    <a data-lightbox="When Harry met sally-wordcloud.png" href="./Output/When Harry met sally-wordcloud.png" data-title="When Harry met sally-wordcloud.png"/><img src="./Output/When Harry met sally-wordcloud.png" class="img-responsive"/></a>
+                <td class="img_container">
+                    <a href="./Output/Breakfast at Tiffanys-perc.png" data-lightbox="image-f13" data-title="Breakfast at Tiffanys-perc.png">
+                        <img src="./Output/Breakfast at Tiffanys-perc.png" class="img-responsive">
+                    </a>
                 </td>
             </tr>
             <tr>
-                <td class="img_container1 border-no">
-                    <a data-lightbox="Die Hard-wordcloud.png" href="./Output/Die Hard-wordcloud.png" data-title="Die Hard-wordcloud.png"/><img src="./Output/Die Hard-wordcloud.png" class="img-responsive"/></a>
+                <td class="img_container">
+                    <a href="./Output/Breakfast at Tiffanys-sDrawing.png" data-lightbox="image-f14" data-title="Breakfast at Tiffanys-sDrawing.png">
+                        <img src="./Output/Breakfast at Tiffanys-sDrawing.png" class="img-responsive">
+                    </a>
                 </td>
-                <td class="img_container1 border-no">
-                    <a data-lightbox="Machete-wordcloud.png" href="./Output/Machete-wordcloud.png" data-title="Machete-wordcloud.png"/><img src="./Output/Machete-wordcloud.png" class="img-responsive"/></a>
+                <td class="img_container">
+                    <a href="./Output/Breakfast at Tiffanys-tran.png" data-lightbox="image-f15" data-title="Breakfast at Tiffanys-tran.png">
+                        <img src="./Output/Breakfast at Tiffanys-tran.png" class="img-responsive" >
+                    </a>
                 </td>
-                <td class="img_container1 border-no">
-                    <a data-lightbox="Predator-wordcloud.png" href="./Output/Predator-wordcloud.png" data-title="Predator-wordcloud.png"/><img src="./Output/Predator-wordcloud.png" class="img-responsive"/></a>
-                </td>
-                <td class="img_container1 border-no">
-                    <a data-lightbox="Rambo-wordcloud.png" href="./Output/Rambo-wordcloud.png" data-title="Rambo-wordcloud.png"/><img src="./Output/Rambo-wordcloud.png" class="img-responsive"/></a>
-                </td>
-                <td class="img_container1 border-no">
-                    <a data-lightbox="The last dragon-wordcloud.png" href="./Output/The last dragon-wordcloud.png" data-title="The last dragon-wordcloud.png"/><img src="./Output/The last dragon-wordcloud.png" class="img-responsive"/></a>
+                <td class="img_container">
+                    <a href="./Output/Breakfast at Tiffanys-wordcloud.png" data-lightbox="image-f16" data-title="Breakfast at Tiffanys-wordcloud.png">
+                        <img src="./Output/Breakfast at Tiffanys-wordcloud.png" class="img-responsive">
+                    </a>
                 </td>
             </tr>
         </table>
     </aside>
 
-
-
-
-
-    <aside class="bg-dark">
-        <div id="Movies" class="container text-center">
-            <div class="call-to-action">
-                <h2>Movies begin here:</h2>
-            </div>
-        </div>
-    </aside>
-
     <aside>
-        <h2><a id="f1">Breakfast at Tiffany's</a></h2>
+        <h2><a id="f2">Bridget Jones</a></h2>
         <p class="bg-light">
         <p><b>Background/Methods:</b></p>
         <p><b>Analysis:</b></p>
         <p><b>Discussion:</b></p>
-        <p> This chick flick's positive emotions go up throughout the movie, while still being quite erratic as well. There are some big highs and big lows, probably explained by the discovery by Fred of an ex-husband who wishes he wasn't (very negative) and the great day out with Fred (very positive) to name but a few. The sentences are a little more positive than negative but not by much. When they are negative, some of them go on for a while...Perhaps to do with that whole speech at the train station... The feelings that dominate are of course trust, joy and anticipation, while some of the most frequently used words are "you" "get/got" but also "darling", which Holly Golightly says a lot.</p>
     </p>
     <table class="table table-responsive">
         <tr>
             <td class="img_container">
-                <a href="./Output/Breakfast at Tiffanys-emoMo.png" data-lightbox="image-f11" data-title="./Output/Breakfast at Tiffanys-emoMo.png">
-                    <img src="./Output/Breakfast at Tiffanys-emoMo.png" class="img-responsive"/>
+                <a href="./Output/Bridget Jones-emoMo.png" data-lightbox="image-f21" data-title="Bridget Jones-emoMo.png">
+                    <img src="./Output/Bridget Jones-emoMo.png" class="img-responsive">
                 </a>
             </td>
             <td class="img_container">
-                <a href="./Output/Breakfast at Tiffanys-feelings.png" data-lightbox="image-f12" data-title="./Output/Breakfast at Tiffanys-feelings.png">
-                    <img src="./Output/Breakfast at Tiffanys-feelings.png" class="img-responsive"/>
+                <a href="./Output/Bridget Jones-feelings.png" data-lightbox="image-f22" data-title="Bridget Jones-feelings.png">
+                    <img src="./Output/Bridget Jones-feelings.png" class="img-responsive">
                 </a>
             </td>
             <td class="img_container">
-                <a href="./Output/Breakfast at Tiffanys-perc.png" data-lightbox="image-f13" data-title="Breakfast at Tiffanys-perc.png">
-                    <img src="./Output/Breakfast at Tiffanys-perc.png" class="img-responsive">
+                <a href="./Output/Bridget Jones-perc.png" data-lightbox="image-f23" data-title="Bridget Jones-perc.png">
+                    <img src="./Output/Bridget Jones-perc.png" class="img-responsive">
                 </a>
             </td>
         </tr>
         <tr>
             <td class="img_container">
-                <a href="./Output/Breakfast at Tiffanys-sDrawing.png" data-lightbox="image-f14" data-title="Breakfast at Tiffanys-sDrawing.png">
-                    <img src="./Output/Breakfast at Tiffanys-sDrawing.png" class="img-responsive">
+                <a href="./Output/Bridget Jones-sDrawing.png" data-lightbox="image-f24" data-title="Bridget Jones-sDrawing.png">
+                    <img src="./Output/Bridget Jones-sDrawing.png" class="img-responsive">
                 </a>
             </td>
             <td class="img_container">
-                <a href="./Output/Breakfast at Tiffanys-tran.png" data-lightbox="image-f15" data-title="Breakfast at Tiffanys-tran.png">
-                    <img src="./Output/Breakfast at Tiffanys-tran.png" class="img-responsive" >
+                <a href="./Output/Bridget Jones-tran.png" data-lightbox="image-f25" data-title="Bridget Jones-tran.png">
+                    <img src="./Output/Bridget Jones-tran.png" class="img-responsive">
                 </a>
             </td>
             <td class="img_container">
-                <a href="./Output/Breakfast at Tiffanys-wordcloud.png" data-lightbox="image-f16" data-title="Breakfast at Tiffanys-wordcloud.png">
-                    <img src="./Output/Breakfast at Tiffanys-wordcloud.png" class="img-responsive">
+                <a href="./Output/Bridget Jones-wordcloud.png" data-lightbox="image-f26" data-title="Bridget Jones-wordcloud.png">
+                    <img src="./Output/Bridget Jones-wordcloud.png" class="img-responsive">
                 </a>
             </td>
         </tr>
     </table>
-</aside>
-
-<aside>
-    <h2><a id="f2">Bridget Jones</a></h2>
-    <p class="bg-light">
-    <p><b>Background/Methods:</b></p>
-    <p><b>Analysis:</b></p>
-    <p><b>Discussion:</b></p>
-</p>
-<table class="table table-responsive">
-    <tr>
-        <td class="img_container">
-            <a href="./Output/Bridget Jones-emoMo.png" data-lightbox="image-f21" data-title="Bridget Jones-emoMo.png">
-                <img src="./Output/Bridget Jones-emoMo.png" class="img-responsive">
-            </a>
-        </td>
-        <td class="img_container">
-            <a href="./Output/Bridget Jones-feelings.png" data-lightbox="image-f22" data-title="Bridget Jones-feelings.png">
-                <img src="./Output/Bridget Jones-feelings.png" class="img-responsive">
-            </a>
-        </td>
-        <td class="img_container">
-            <a href="./Output/Bridget Jones-perc.png" data-lightbox="image-f23" data-title="Bridget Jones-perc.png">
-                <img src="./Output/Bridget Jones-perc.png" class="img-responsive">
-            </a>
-        </td>
-    </tr>
-    <tr>
-        <td class="img_container">
-            <a href="./Output/Bridget Jones-sDrawing.png" data-lightbox="image-f24" data-title="Bridget Jones-sDrawing.png">
-                <img src="./Output/Bridget Jones-sDrawing.png" class="img-responsive">
-            </a>
-        </td>
-        <td class="img_container">
-            <a href="./Output/Bridget Jones-tran.png" data-lightbox="image-f25" data-title="Bridget Jones-tran.png">
-                <img src="./Output/Bridget Jones-tran.png" class="img-responsive">
-            </a>
-        </td>
-        <td class="img_container">
-            <a href="./Output/Bridget Jones-wordcloud.png" data-lightbox="image-f26" data-title="Bridget Jones-wordcloud.png">
-                <img src="./Output/Bridget Jones-wordcloud.png" class="img-responsive">
-            </a>
-        </td>
-    </tr>
-</table>
 
 </aside>
 <aside>
