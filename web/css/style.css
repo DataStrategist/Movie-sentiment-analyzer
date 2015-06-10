@@ -40,4 +40,29 @@
 }
 .border-no{
     border: none !important;
+    margin: 0px !important;
+}
+.flick-panel{
+    border-bottom: 14px solid #f2dede;
+    border-left:  14px solid #f2dede;
+    border-right:  14px solid #f2dede;
+    border-radius: 3px; 
+}
+.flick-panel-heading{
+    background-color: #f2dede;
+    font-size: 14px;
+    height: 45px;
+    padding-top: 10px;
+}
+.man-panel{
+    border-bottom: 14px solid #d9edf7;
+    border-left:  14px solid #d9edf7;
+    border-right:  14px solid #d9edf7;
+    border-radius: 3px; 
+}
+.man-panel-heading{
+    background-color: #d9edf7;
+    font-size: 14px;
+    height: 45px;
+    padding-top: 10px;
 }
