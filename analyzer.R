@@ -1,6 +1,3 @@
-## Interesting packages
-
-## ------------------------------------------------------------------------
 library(syuzhet)
 library(stringr)
 library(tm)
@@ -9,14 +6,14 @@ library(ggplot2)
 library(xtable)
 
 ###--------- Choices -------------------------------
-# Amit:
+# Action movies:
 #   Rambo
 #   Predator
 #   Die Hard
 #   Machete
 #   The last dragon
 #   
-# Laure:
+# Chick Flicks:
 #   When Harry Met Sally
 #   Bridget Jones
 #   Breakfast at Tiffany's
@@ -24,16 +21,17 @@ library(xtable)
 #   Notting Hill
 
 ###--------- Load in -------------------------------
-pathF <- "K:/Dropbox/Dropbox/My projects/Movie - sentiment analyzer/Movie scripts/"
-pathO <- "K:/Dropbox/Dropbox/My projects/Movie - sentiment analyzer/web/Output/"
+pathF <- "./Movie scripts/"
+pathO <- "./web/Output/"
 filesList = list.files(pathF)
 
+## Initialize stuff
 generalStats <- data.frame(0,0,0,0)
 names(generalStats) <- c("Words","Length","Rate")
 iii<-0
 naam.list <-NULL
 
-
+## ... and Goooooo!
 for (i in 1:length(filesList)){
   
   ###--------------- CALCULATE STUFF ------------
@@ -46,8 +44,7 @@ for (i in 1:length(filesList)){
   ## Read in
   sentences.df <- get_sentences(get_text_as_string(
     paste(pathF,filesList[i],sep="/")))
-  ou <- removeWords(sentences.df, stopwords("english"))  
-  
+    
   ## Sentiment analysis 
   feelings.df <- get_sentiment(sentences.df, method="bing")
   
@@ -58,22 +55,18 @@ for (i in 1:length(filesList)){
     paste(pathF,filesList[i],sep="/"))," ")
   Sentences <- length(sentences.df)
 #   Length <- ggplot2::movies$length[naam==ggplot2::movies$title]
-# hell with this, neither this nor grep work.. movie names are too weird
-# what with the ellipsis and quotes and subtext... forget it! Cheat mode:
+## hell with this, neither this nor grep work.. movie names are too weird
+## what with the ellipsis and quotes and subtext... forget it! Cheat mode:
   moobieLengths=c(115,97,102,131,107,124,107,92,109,96)
   Length=moobieLengths[i]
   WordRate <- Werds/Length
   generalStats[iii,] <- data.frame(Sentences,Length,WordRate)
   
-#   print.xtable(xtable(generalStats, type="html", 
-#                file=paste(pathO,naam,"-stats.html", sep="")))
-# cat(naam, Werds,Length, WordRate)
-  
-  
+
   ###--------- Wordclouds -------------------------------
-  # man colour
-  # wordcloud(ou, scale=c(3,0.5), max.words=50, colors=brewer.pal(8,"PuOr"))
-  ##woman colour, use this for all... pff.
+  ## hrmmmm.... don't remove stopwords
+  # ou <- tm_map(Corpus(VectorSource(sentences.df)), removeWords, stopwords("SMART"))
+  ou <- sentences.df
   png(width=250, height=250, file=paste(pathO,naam,"-wordcloud.png", sep=""))
     wordcloud(ou, scale=c(3,0.5), max.words=50, colors=brewer.pal(8,"Set2"))
   dev.off()
@@ -239,45 +232,4 @@ for (i in 1:length(filesList)){
     ggsave(filename=paste(pathO,"Movie pace.png", sep=""))
   }
 } #-------------------------------- loop end
-
-
-
-
-## Emomo example:
-e <- c(
- "I love you.",
- "aw... I love you too!",
- "I hate you, you're destroying my life.",
- "... what?",
- "Just kidding! You're awesome.",
- "Lol... you so crazy!")
-e.sentiment <- get_sentiment(e, method="bing")
-png(width=725, height=325, file=paste(pathO,"emoMo example.png", sep="")) 
-par(mfrow=c(1,2))
-  plot(e.sentiment,type="l")
-abline(lsfit(1:6, e.sentiment),col="red",lwd=2)
-abline(h = 0, v = 0, col = "gray60")
-title("Normal sentiment")
-df.mom <- data.frame(x=0,y=0)
-
-for (ii in 2:length(e)+1){
-  df.mom[ii,1] <- df.mom[ii-1,1] + 1
-  df.mom[ii,2] <- df.mom[ii-1,2] + e.sentiment[ii] 
-}
-## plot!
-xlim=c(min(df.mom$x),max(df.mom$x))
-ylim=c(min(df.mom$y),max(df.mom$y))
- 
-plot(xlim,ylim,type="n",ylab="Emotional valence",xlab="Sentence number")
-for (j in 1:nrow(df.mom)){
-  lines(df.mom[c(j,j+1),1],df.mom[c(j,j+1),2])
-}
-abline(lsfit(1:6, df.mom[2]),col="red",lwd=2)
-abline(h = 0, v = 0, col = "gray60")
-title("Emotional Momentum (EmoMo)")
-dev.off()
-
-
-
-
 
