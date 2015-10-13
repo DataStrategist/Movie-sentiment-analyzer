@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Sentiment analysis on man/woman movie scripts</title>
+        <title>Finding out once and for all if there's a difference between chick flicks and action movies!</title>
 
         <!-- Bootstrap Core CSS -->
         <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -66,7 +66,6 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand page-scroll" href="http://www.amitkohli.com">@</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -82,6 +81,7 @@
                         <li><a class="navbar-brand page-scroll" href="#hist" >Trans</a></li>
                         <li><a class="navbar-brand page-scroll" href="#emoMo" >EmoMo</a></li>
                         <li><a class="navbar-brand page-scroll" href="#conc" >Conclusion</a></li>
+						<li><a class="navbar-brand page-scroll" href="http://www.amitkohli.com">@</a></li>
 					</ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -343,7 +343,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 text-center">
-                        <p>Check out the entire analysis on github!</p>
+                        <p  class="bg-dark">Check out the entire analysis <a href="https://github.com/mexindian/Movie-sentiment-analyzer" target="_blank">on github</a>!</p>
 					</div>
                 </div>
             </div>
@@ -496,7 +496,7 @@
 
             <h2><a id="sd">Sentence art: MODERN ART... but more feelingsy</a></h2>
             <p class="bg-light">
-            <p><b>Background/Methods:</b> I saw this 'squiggle' on <a href="http://vallandingham.me/sentence_drawings/#farewell">Jan Vallandingham's blog</a>, who in turn took it from <a href="http://www.stefanieposavec.co.uk/">Stefanie Posavec</a>. The concept is simple: use the number of characters per sentence as the line length, then turn right and draw the next line, until you have this crazy knot of squiggles! As soon as I saw it, I thought it would be a great tool for this analysis, if I could add a sentiment element to it. Or at least hella fun. I got so excited that I didn't even see that code to accomplish this in R had already been developed by <a href="https://trinkerrstuff.wordpress.com/2013/12/08/sentence-drawing-function-vs-art/">TRinker</a>. Oh well, it was fun to construct another algorithm to accomplish the same task (and mine colors each sentence using the sentiment for each sentence using get_sentiment() from syuzhet, so green = positive, grey = neutral, red = negative). For what it's worth, it's in my github repo. Black dot is the start, blue dot is the end of the script.</p>
+            <p><b>Background/Methods:</b> I saw this 'squiggle' on <a href="http://vallandingham.me/sentence_drawings/#farewell">Jan Vallandingham's blog</a>, who in turn took it from <a href="http://www.stefanieposavec.co.uk/">Stefanie Posavec</a>. The concept is simple: use the number of characters per sentence as the line length, then turn right and draw the next line, until you have this crazy knot of squiggles! As soon as I saw it, I thought it would be a great tool for this analysis, if I could add a sentiment element to it. Or at least hella fun. I got so excited that I didn't even see that code to accomplish this in R had already been developed by <a href="https://trinkerrstuff.wordpress.com/2013/12/08/sentence-drawing-function-vs-art/">TRinker</a>. Oh well, it was fun to construct another algorithm to accomplish the same task (and mine colors each sentence using the sentiment for each sentence using get_sentiment() from syuzhet, so green = positive, grey = neutral, red = negative). For what it's worth, it's in my <a href="https://github.com/mexindian/Movie-sentiment-analyzer" target="_blank">github repo</a>. Black dot is the start, blue dot is the end of the script.</p>
 			
             <div class="flick-panel">
                 <div class="flick-panel-heading"><h3 style="margin:  0px !important;">Chick flicks</h3></div>
@@ -715,7 +715,7 @@
 			
 			<p>Introducing <i>EmoMo</i>, the emotional momentum chart! Instead of simply plotting the emotional valence of each new sentence starting from zero, we keep adding the emotional valence to that of the preceding sentence. That way we can sort of come up with the emotional momentum. The following shows the impact of the EmoMo chart considering the example conversation from above (fancy highlighter use costs extra):</p>
 			
-			<p><a data-lightbox="EmoMo ex" href="./img/emoMo.png" data-title="EmoMo explanation"/><img src="./img/emoMo.png"/ class="img-responsive"/></a></p>
+			<p><a data-lightbox="EmoMo ex" href="./img/emoMo.PNG" data-title="EmoMo explanation"/><img src="./img/emoMo.PNG"/ class="img-responsive"/></a></p>
 			
 			<p> So the basic mechanic is go up the valence amount, and then go right, and then go up,down, or the same depending on the next sentence. Another variant is to go up/down the valence X the sentence length, but it was a bit exaggerated and didn't add anything to these charts, so I didn't do that. The fastest way to do this is to simply plot the dplyr::summarize(cumsum(thingie)), but I wanted to plot showing the color of each line (green is positive, red is negative), so I made my own function. Anyway, without further ado, here are the emoMos for each movie:</p>
 			
@@ -782,16 +782,16 @@
 	<aside>
 		<p>First off, let's just go ahead and say it... 10 movies picked quite arbitrarily do NOT trends make... so grain of salt here... Anyway, that out of the way, we see here that chick flicks and action movies ARE probably different. They peddle different feelings at us. Chick flicks have more ups and downs than action movies but most importantly, the emoMo shows us that chick flicks tend towards the positive throughout the movie. On the other hand, action movies hesitate more, but tend towards the negative pretty consistently. We also conclude that The Last Dragon is a chick flick which I think is the most interesting conclusion of all! Keep this in mind the next time that your significant other wants to watch a chick flick! </p>
 					
-		<p>I just want to be clear that all the sentiment analysis part of this analysis was using method=Bing... results may vary for other methods.</p>
+		<p>I just want to be clear that all the sentiment analysis part of this analysis was using method=Bing... results may vary for other methods (see how much they change in the image below).</p>
 					
 		<p>For further analysis (I might get around to them, but if I don't, geeks of the world, you do it!):</p>
 		<ul>
 			<li> It would be interesting to analyze movies of other cultures... I'm not sure how good the libraries are though...
-			<li> It would be good to do emoMos for each character in a movie... maybe in the future... to anyone interested, here's a teaser trailer, showing the results under each sentiment analysis method:
+			<li> It would be good to do emoMos for each character in a movie... maybe in the future... to anyone interested, here's a teaser trailer, showing the results for the movie Shrek under each sentiment analysis method:
 		</ul>
 		<a data-lightbox="Character sents.png" href="./output/Character sents.png" data-title="Character sents.png"/><img src="./output/Character sents.png" width="75%" class="img-responsive"/></a>						
 		
-		<p><i>Analysis and description by: Amit Kohli and Laure Belotti. Thanks to <a href="https://www.linkedin.com/in/keithgonzales" target="_blank">Keith Gonzales</a> for being such a tech guru!</i></p>
+		<p><i>Analysis and writeup: Amit Kohli and Laure Belotti. Thanks to <a href="https://www.linkedin.com/in/keithgonzales" target="_blank">Keith Gonzales</a> for being such a tech guru!</i></p>
 	</aside>
 	
 	<section class="bg-secondary">
@@ -805,7 +805,10 @@
 				<script src="https://apis.google.com/js/platform.js" async defer></script>
 				<g:plusone></g:plusone>
 				
-				<div class="fb-like" data-href="http://amitkohli.com/movieSentiments/index.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+				<div class="fb-like" data-href="http://amitkohli.com/movieSentiments/index.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+				
+				<iframe src="https://ghbtns.com/github-btn.html?user=mexindian&repo=Movie-sentiment-analyzer&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+				
 			</div>
 		</div>	
 	</section>
