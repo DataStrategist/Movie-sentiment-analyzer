@@ -1,9 +1,10 @@
-library(syuzhet)
+  library(syuzhet)
 library(stringr)
 library(tm)
 library(wordcloud)
 library(ggplot2)
 library(xtable)
+library(dplyr)
 
 ###--------- Choices -------------------------------
 # Action movies:
@@ -26,7 +27,7 @@ pathO <- "./web/Output/"
 filesList = list.files(pathF)
 
 ## Initialize stuff
-generalStats <- data.frame(0,0,0,0)
+generalStats <- data.frame(0,0,0)
 names(generalStats) <- c("Words","Length","Rate")
 iii<-0
 naam.list <-NULL
@@ -77,12 +78,14 @@ for (i in 1:length(filesList)){
   plot(
     percent_vals, 
     type="l", 
+    ylim=c(-1.1,1.1),
     main="Plot trajectory by minute", 
     xlab = "Narrative Time (min)", 
     ylab= "Emotional Valence", 
     col="red"
   )
-  dev.off()
+  abline(h=0,col="black")
+   dev.off()
   
   ## ---- Transformed -----------------------------------------------------
   ft_values <- get_transformed_values(
@@ -216,20 +219,37 @@ for (i in 1:length(filesList)){
   points(x=df.mom[nrow(df.mom),1],y=df.mom[nrow(df.mom),2],pch=20, col="blue")
   dev.off()
 
+  ##---- Overall general plot -----
   if (iii==10){
     generalStats$gender <- c("female","female","female","male","male","female","male","male","male","female")
-    generalStats$Name <- naam.list                        
-    ggplot(generalStats,aes(x=Words,y=Length,size=Rate,
+    generalStats$Name <- naam.list
+    generalStats <- cbind(ID= 1:10,
+                          generalStats,
+                          s="Each movie")
+    generalStats %>%
+      group_by(gender)%>%
+      summarize(mean(Words),mean(Length),mean(Rate)) -> sumG
+    sumG <- cbind(ID=c(11,12),
+                  sumG[,c(2:4)],
+                  gender=c("female","male"),
+                  name=c("Female mean","Male mean"),
+                  s="Gender overall")    
+    names(sumG) <- names(generalStats)
+    boff <- bind_rows(generalStats,sumG)
+    ggplot(boff,aes(x=Words,shape =s,y=Length,size=Rate,
                             label=Name,color=factor(gender))) +
       geom_point() + 
       labs(title="Movie length vs # words",
            x="Number of words (used spaces as proxy)",
            y="Movie length (min)",
-           color="Movie genre",
-           size="Speech rate (words/min)") +
+           color="COLOR= Movie genre",
+           size="SIZE = Speech rate (words/min)",
+           shape="SHAPE = each movie or aggregate") +
       geom_text(aes(label=Name),vjust=-.5)+ 
-      scale_size(range=c(3,6))
+      scale_size(range=c(2,7))
     ggsave(filename=paste(pathO,"Movie pace.png", sep=""))
   }
-} #-------------------------------- loop end
+} 
+
+#-------------------------------- loop end
 
