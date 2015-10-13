@@ -76,12 +76,12 @@
                         <li><a class="navbar-brand page-scroll" href="#analysis" >Analysis</a></li>
                         <li><a class="navbar-brand page-scroll" href="#wc" >wordclouds</a></li>
 						<li><a class="navbar-brand page-scroll" href="#feel" >feelings</a></li>
-                        <li><a class="navbar-brand page-scroll" href="#sd" >sentArt</a></li>
+                        <li><a class="navbar-brand page-scroll" href="#sd" >squiggles</a></li>
 						<li><a class="navbar-brand page-scroll" href="#plot" >Lines</a></li>
-                        <li><a class="navbar-brand page-scroll" href="#hist" >Trans</a></li>
+                        <li><a class="navbar-brand page-scroll" href="#hist" >histograms</a></li>
                         <li><a class="navbar-brand page-scroll" href="#emoMo" >EmoMo</a></li>
                         <li><a class="navbar-brand page-scroll" href="#conc" >Conclusion</a></li>
-						<li><a class="navbar-brand page-scroll" href="http://www.amitkohli.com">@</a></li>
+						<li><a class="navbar-brand page-scroll" href="http://amitkohli.com/chick-flicks-vs-action-movies/">@</a></li>
 					</ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -372,7 +372,7 @@
 		<aside>
             <h2><a id="wc">Wordcloud: What words are most said?</a></h2>
             <p class="bg-light">
-            <p><b>Background/Methods:</b>R was used here to create word clouds made up of the most frequently said words in the film. Main character names were excluded from the word cloud because they are likely to be repeated many times in a film but this doesn't tell us much. We played around with removing stopwords or not, ultimately, we left them in because it is also interesting to see if the different movie types use stopwords more or less frequently.</p>
+            <p><b>Background/Methods:</b> R was used here to create word clouds made up of the most frequently said words in the film. Main character names were excluded from the word cloud because they are likely to be repeated many times in a film but this doesn't tell us much. We played around with removing stopwords or not, ultimately, we left them in because it is also interesting to see if the different movie types use stopwords more or less frequently.</p>
 			
 			<div class="flick-panel">
                 <div class="flick-panel-heading"><h3 style="margin:  0px !important;">Chick flicks</h3></div>
@@ -482,7 +482,7 @@
                 </table>            
             </div>          
 			
-            <p><br><b>Analysis:</b> Overall, action movies and chick flicks display dominant feelings of trust (although perhaps this is a vocabulary calibration issue?). For all chick flicks, the three dominant feelings are trust, joy and anticipation while disgust and anger are the least prevalent. The above is not true of any of the action movies as they focus much more on anger, fear and anticipation, except for The Last Dragon which is behaving... strangely.</p>            
+            <p><br><b>Analysis:</b> Overall, all movies display dominant feelings of trust (although perhaps this is a vocabulary calibration issue?). For all chick flicks, the three dominant feelings are trust, joy and anticipation while disgust and anger are the least prevalent. The above is not true of any of the action movies as they focus much more on anger, fear and anticipation, except for The Last Dragon which is behaving... strangely.</p>            
 			
             <p><b>Discussion:</b> So "trust" looks to be the dominant feeling in both chick flicks and action movies, although we're not sure that it's well balanced with say, "disgust" as a feeling. Assuming the result is reliable, one could imagine that this is due to the necessary building of relationships in both scenarios. In other words, this data could be telling us that brotherhood and sisterhood are equally important! </p>
 			
@@ -549,7 +549,7 @@
 			
 			<p>It should be said that there are lots of VERY long lines in the scripts above. These are songs, or monologues and the like, which were not broken up by the function get_sentences() of syuzhet. We could change the delimiting to force the sentences to be smaller, but we're not gigantically bothered.</p>
 			
-            <p><b>Discussion:</b>It seems like the overall trend in chick flicks is that they tend to be more positive than negative. These drawings also tell us to expect more overall emotion in chick flicks than in action movies. Intuitively this makes sense as chick flicks tend to be about relationships which are emotional in nature. As we say, action movies have more negative sentences (indeed more overall negative things tend to happen in these types of movies) but they also have neutral sentences conveying no emotion at all. Perhaps these sentences are "process-oriented", as in "Pass me that rope", "Get on the elevator", "Hide behind that tree" etc... </p>
+            <p><b>Discussion:</b> It seems like the overall trend in chick flicks is that they tend to be more positive than negative. These drawings also tell us to expect more overall emotion in chick flicks than in action movies. Intuitively this makes sense as chick flicks tend to be about relationships which are emotional in nature. As we say, action movies have more negative sentences (indeed more overall negative things tend to happen in these types of movies) but they also have neutral sentences conveying no emotion at all. Perhaps these sentences are "process-oriented", as in "Pass me that rope", "Get on the elevator", "Hide behind that tree" etc... </p>
 			
 			<p>In conclusion, sentences are more emotional overall and more positive in chick flicks than in action movies, but we can prolly do better...</p> 
             
@@ -691,7 +691,7 @@
 			<br>
 			<p>Also interesting that Predator and The Last Dragon manage to "stay afloat" so to speak. In other words, they go from good to slightly less good but not bad. No chick flick does that.</p> 
 			
-			<p><b>Discussion:</b>There is no discernible pattern differentiating chick flicks and action movies. They all behave in their own way and have their own set of good and bad moments. Perhaps each individual story dictates the frequency and severity of ups and downs rather than whether it's a chick flick or an action movie. </p>
+			<p><b>Discussion:</b> There is no discernible pattern differentiating chick flicks and action movies. They all behave in their own way and have their own set of good and bad moments. Perhaps each individual story dictates the frequency and severity of ups and downs rather than whether it's a chick flick or an action movie. </p>
 			
 			<p>Of all the movies, two sets of movies behave similarly: Bridget Jones and Machete, then Rambo and Notting Hill! For these, the movie sentiment goes very evenly from good to bad, to good. Then, in the case of Machete and Bridget Jones, there's another bad segment. The only difference there is that about 5 minutes before the end of Bridget Jones, things get good again (she gets her man Darcy, FINALLY). In Machete, things just end badly...</p>
 			
@@ -711,13 +711,13 @@
                 <li>Person 2: Lol... you so crazy! (-1)
             </ol>
 			
-            <p> This kind of discussion would alternate between positive and negative in traditional emotional analysis, if anything, there's somewhat of a negative trend. However, in life, this is a goodish conversation (although person 1 is a bit playful and inconsistent...). So how can we capture that and keep track of the sentimental history?</p>
+            <p> This kind of discussion would alternate between positive and negative in traditional emotional analysis, if anything, there's somewhat of a negative trend. However, in life, this is a goodish conversation (although person 1 is a bit playful and inconsistent...). So how can we capture that and keep track of the sentiment history?</p>
 			
 			<p>Introducing <i>EmoMo</i>, the emotional momentum chart! Instead of simply plotting the emotional valence of each new sentence starting from zero, we keep adding the emotional valence to that of the preceding sentence. That way we can sort of come up with the emotional momentum. The following shows the impact of the EmoMo chart considering the example conversation from above (fancy highlighter use costs extra):</p>
 			
 			<p><a data-lightbox="EmoMo ex" href="./img/emoMo.PNG" data-title="EmoMo explanation"/><img src="./img/emoMo.PNG"/ class="img-responsive"/></a></p>
 			
-			<p> So the basic mechanic is go up the valence amount, and then go right, and then go up,down, or the same depending on the next sentence. Another variant is to go up/down the valence X the sentence length, but it was a bit exaggerated and didn't add anything to these charts, so I didn't do that. The fastest way to do this is to simply plot the dplyr::summarize(cumsum(thingie)), but I wanted to plot showing the color of each line (green is positive, red is negative), so I made my own function. Anyway, without further ado, here are the emoMos for each movie:</p>
+			<p> So the basic mechanic is go up the valence amount, and then go right, and then go up/down/neutral depending on the next sentence. Another variant is multiply the valence by the number of letters in the sentence, but it was a bit exaggerated and didn't add anything to these charts, so we didn't do that. BTW, the fastest way to do this is to simply plot the dplyr::summarize(cumsum(thingie)), but we wanted to plot showing the color of each line (green is positive, red is negative), so we made our own function. Anyway, without further ado, here are the emoMos for each movie:</p>
 			
 			<div class="flick-panel">
                 <div class="flick-panel-heading"><h3 style="margin:  0px !important;">Chick flicks</h3></div>
@@ -766,7 +766,7 @@
             </div>
 
             <br>
-			<p><b>Analysis:</b> The trends here are pretty clear: in chick flicks, positive emotions increase over the course of the movie with only a few negative bits in between. In action movies, the trend is the opposite in all cases except "The Last Dragon" which, for some reason, behaves like a chick flick again. Other than this film, all action movies tend to start with positive words and emotions and progress to a darker, more sinister place as the movie goes on...</p>
+			<p><b>Analysis:</b> The trends here are pretty clear: in chick flicks, positive emotions increase over the course of the movie with only a few negative bits in between. In action movies, the trend is the opposite in all cases except "The Last Dragon" which, for some reason, is behaving like a chick flick again. Other than this film, all action movies tend to start with positive words and emotions and progress to a darker, more sinister place as the movie goes on...</p>
             
 			<p><b>Discussion:</b> Because chick flicks tend to end well and not have that many negative emotions in them, it makes sense that the trend would be upwards with just a few little hiccups on the way. In action movies, the problem-solving, suspense/shock value involved and all the obstacles being put in the way of the hero must surely make the film increasingly negative as one event compounds another. For instance, in Die Hard poor John McClane has to deal with the increasingly elaborate problems created by Hans Gruber's hostage-taking. Luckily for him and other action movie heroes, the movie does have a little positive moment at the end, even if it never comes back to the original level of positivity at the beginning of the movie. Hell, we're just happy the hero got out alive! Not so for the heroes in Predator however...in this film, the film goes unrelentingly downhill from the beginning until the end and Dutch, the main character, is the only man standing after barely surviving the predator. Oh, spoiler alert btw.</p>
 
@@ -780,18 +780,20 @@
 		</div>
 	</section>
 	<aside>
-		<p>First off, let's just go ahead and say it... 10 movies picked quite arbitrarily do NOT trends make... so grain of salt here... Anyway, that out of the way, we see here that chick flicks and action movies ARE probably different. They peddle different feelings at us. Chick flicks have more ups and downs than action movies but most importantly, the emoMo shows us that chick flicks tend towards the positive throughout the movie. On the other hand, action movies hesitate more, but tend towards the negative pretty consistently. We also conclude that The Last Dragon is a chick flick which I think is the most interesting conclusion of all! Keep this in mind the next time that your significant other wants to watch a chick flick! </p>
+		<p>First off, let's just go ahead and say it... 10 movies picked quite arbitrarily do NOT trends make... so grain of salt here... Also, some people will find "chick flick" to be a borderline derogatory meaningless term, others might think that "RomComs" might be a better adversary to action movies, or that all three are stupid categories. No offence is intended anywhere, we're just using generalish categories that people would recognize easily.</p>
+		
+		<p>Anyway, that out of the way, we see here that chick flicks and action movies ARE probably different. They peddle different feelings at us. Chick flicks have more ups and downs than action movies but most importantly, the emoMo shows us that chick flicks tend towards the positive throughout the movie. On the other hand, action movies hesitate more, but tend towards the negative pretty consistently. We also conclude that The Last Dragon is a chick flick which I think is the most interesting conclusion of all! Keep this in mind the next time that your significant other wants to watch a chick flick! </p>
 					
-		<p>I just want to be clear that all the sentiment analysis part of this analysis was using method=Bing... results may vary for other methods (see how much they change in the image below).</p>
+		<p>I just want to be clear that all the sentiment analysis part of this analysis was using Bing method... results may vary for other methods (see how much they change in the image below).</p>
 					
 		<p>For further analysis (I might get around to them, but if I don't, geeks of the world, you do it!):</p>
 		<ul>
-			<li> It would be interesting to analyze movies of other cultures... I'm not sure how good the libraries are though...
-			<li> It would be good to do emoMos for each character in a movie... maybe in the future... to anyone interested, here's a teaser trailer, showing the results for the movie Shrek under each sentiment analysis method:
+			<li> It would be interesting to analyze movies of other cultures... I'm not sure how good the sentiment analysis libraries are though...	
+			<li> Another fun-sounding analysis would be to do emoMos for each character in a movie... maybe in the future... to anyone interested, here's a teaser trailer, showing the results for the movie Shrek under each sentiment analysis method:
 		</ul>
 		<a data-lightbox="Character sents.png" href="./output/Character sents.png" data-title="Character sents.png"/><img src="./output/Character sents.png" width="75%" class="img-responsive"/></a>						
 		
-		<p><i>Analysis and writeup: Amit Kohli and Laure Belotti. Thanks to <a href="https://www.linkedin.com/in/keithgonzales" target="_blank">Keith Gonzales</a> for being such a tech guru!</i></p>
+		<p><i>Analysis and writeup: Amit Kohli and <a href="https://www.linkedin.com/pub/laure-belotti/18/12/6b3" target="_blank">Laure Belotti</a>. Thanks to <a href="https://www.linkedin.com/in/keithgonzales" target="_blank">Keith Gonzales</a> for being such a tech guru!</i></p>
 	</aside>
 	
 	<section class="bg-secondary">
